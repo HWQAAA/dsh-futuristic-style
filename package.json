@@ -1,0 +1,77 @@
+{
+  "name": "dsh-futuristic-style",
+  "version": "0.1.0",
+  "description": "Cinematic cold-start animation with original audio and a looping anime chat background for DeepSeek Harness.",
+  "type": "module",
+  "license": "MIT",
+  "author": "HWQAAA",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HWQAAA/dsh-futuristic-style.git"
+  },
+  "homepage": "https://github.com/HWQAAA/dsh-futuristic-style#readme",
+  "bugs": {
+    "url": "https://github.com/HWQAAA/dsh-futuristic-style/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cold-start",
+    "wallpaper",
+    "background",
+    "animation"
+  ],
+  "main": "lib/host/index.js",
+  "exports": {
+    ".": "./lib/host/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "ASSETS.md",
+    "package.json"
+  ],
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "packageManager": "pnpm@11.28.5",
+  "scripts": {
+    "build": "tsc -p tsconfig.host.json && vite build",
+    "build:client": "vite build",
+    "build:host": "tsc -p tsconfig.host.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.1-rc.2": "compatible"
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "6.3.0",
+    "playwright": "1.63.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "5.9.3",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  }
+}
